@@ -6,6 +6,20 @@
     <title>Document</title>
 </head>
 <body>
-    <script></script>
+    <script>
+      let bill= prompt("How much was the bill?")
+      bill= parseFloat(bill)
+      let tip= prompt("how much percent do you want to tip?")
+      tip= parseFloat(tip)
+       let people= prompt("How many people were eating with you?")
+       people= parseInt(people)
+
+       let tip_amount= (bill) * ( tip/100 )
+       let total= (bill) * ( tip/100 )+(bill)
+       let per_person= (total) / (people)
+       alert( "your total price with tip included is" + total.toLocaleString("en-us", {style:"currency", currency: "USD"}))
+       alert("the total amount per person is" + per_person.toLocaleString("en-us", {style:"currency", currency: "USD"})) 
+       alert("the price of the tip is" +  tip_amount.toLocaleString("en-us", {style:"currency", currency: "USD"}))
+    </script>
 </body>
 </html>
