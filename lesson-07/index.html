@@ -6,6 +6,32 @@
     <title>Document</title>
 </head>
 <body>
-    <script></script>
+    <script>
+        let grade = Number(prompt("Enter your test grade.")); // It needs to include number because it will automatically make it a string if you do not//
+              if (grade>= 100) {
+                alert ("Congrats, you got a perfect score :)")
+            }  else if (grade>=90) {
+            alert("You got a A :)")
+            }else if (grade>=80) {
+            alert("You got a B :)")
+            } else if (grade >= 70) {
+                alert("You got a C :/")
+             } else if (grade >= 60) {
+                alert("You got a D :(")
+             } else {
+                alert("You got a F :(")
+             }
+         /*
+  TEST RESULTS - Letter Grade Converter
+  Test score | Expected | Your output
+  -----------|----------|------------
+  90         | A        | A
+  89         | B        | B
+  60         | D        | D
+  59         | F        | F
+  100        | A        | A
+*/
+
+    </script>
 </body>
 </html>
