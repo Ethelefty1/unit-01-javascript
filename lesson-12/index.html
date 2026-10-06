@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+  "use strict"
+
+    let theAnswer=  Math.floor((Math.random()*100)+1)
+     let guess= Number(prompt("enter a number between 1 and 100"))
+     let min = 1
+     let max = 100
+     while( guess != theAnswer && guess != null) {
+     if( guess === theAnswer ){
+        alert("Congrats, you got it!")
+     }
+     else if (guess > theAnswer && guess < max){
+    alert("Too high. Try again")
+   }   else if (guess < theAnswer && guess > min){
+    alert("Too low. Try again")
+   }  else if (guess === null ){
+    alert("Game over, the number was"+ theAnswer) 
+   }
+   else{
+    alert("Please enter a valid number")
+   }
+   guess= Number(prompt("enter a number between 1 and 100"))
+
+}
+  
+
+                        
+            
+        
+        
+        
+         
+
+       
+
+
+    </script>
+</body>
+</html>
