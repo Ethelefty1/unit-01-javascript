@@ -13,21 +13,20 @@
      let guess= Number(prompt("enter a number between 1 and 100"))
      let min = 1
      let max = 100
-     while( guess != theAnswer && guess != null) {
+     while( guess != theAnswer && guess != 0) {
       if (guess > theAnswer && guess < max){
     alert("Too high. Try again")
    }   else if (guess < theAnswer && guess > min){
     alert("Too low. Try again")
-   }  else if (guess === null ){
-    alert("Game over, the number was"+ theAnswer) 
-   }
-   else{
-    alert("Please enter a valid number")
-   }
-   guess= Number(prompt("enter a number between 1 and 100"))
+    }
+    guess= Number(prompt("enter a number between 1 and 100"))
 }
 
-alert("Congrats, you got it!")
+if(guess === theAnswer){
+    alert("Congrats, you got it!")
+} else if(guess === 0){
+    alert("Game over, the number was "+ theAnswer) 
+}
 
 
      
