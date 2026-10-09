@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//part 1//
+function showBanner(){
+   console.log(" ====================")
+   console.log(" GUESS THE NUMBER")
+   console.log(" ====================")
+}
+showBanner()
+showBanner()
+//part 2//
+function printNameTag(name){
+console.log("Hello, my name is "
+ + name)}
+
+ printNameTag("Eli")
+ printNameTag("Chicken Nugget")
+ printNameTag("Baconeggandcheeseonabagelwithmayoandhothoneywithextrabacon")
+
+//part 3//
+function calculateTip(bill,pct){
+    let tip= bill * (pct / 100)
+    return tip
+}
+
+let tip = calculateTip(80,15)
+console.log(tip.toFixed(2))
+//part 4//
+function ticketPrice(age) {
+    if (age < 13) {
+        return 8;
+    } else if (age >= 65) {
+        return 10;
+    } else {
+        return 12;
+    }}
+    console.log(ticketPrice(10));
+console.log(ticketPrice(13));
+console.log(ticketPrice(30));
+console.log(ticketPrice(65));
+console.log(ticketPrice(40) + ticketPrice(40) + ticketPrice(9));
+
+
+
+
+</script>
+</body>
+</html>
