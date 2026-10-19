@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+// ===== My Student Profile =====
+
+// ----- CORE -----
+
+// Core 1: Create an object named student with three properties:
+//   name (a string), grade (a number), and scores (an array of three test scores).
+let student={
+    name:"Eli",
+    grade: 12,
+    scores:[100,99,100],
+    describe: function() {
+        return this.name + " is in grade " + this.grade;
+    }
+};
+
+// Core 2: Log the name using DOT notation.
+//   Log the grade using BRACKET notation.
+//   Log the second score using student.scores[1].
+console.log(student.name)
+console.log(student["grade"])
+console.log(student.scores[1])
+
+// Core 3: Change grade to a new value. Add a new homeroom property.
+//   Log both. Then log a property that does NOT exist.
+//   Write a comment explaining what printed. It printed undefined because student.chickennugget is not defines.
+student.grade= 11
+student.homeroom= 215
+console.log(student.grade)
+console.log(student.homeroom)
+console.log(student.chickennugget)
+
+
+// Core 4: Inside your object, add a method named describe that RETURNS
+//   a sentence like "Maya is in grade 12". Use this.
+//   Then log student.describe() here.
+console.log(student.describe())
+
+
+</script>
+</body>
+</html>
