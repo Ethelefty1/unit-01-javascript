@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// ----- CORE -----
+
+// Core 1: Write a constructor function named Student with three parameters:
+//   name, grade, and scores (an array of three test scores).
+//   Store each one as a property using this.
+// Core 2: Inside your constructor, add a method named getHighest that RETURNS
+//   the highest of this.scores[0], this.scores[1], and this.scores[2].
+//   Hint: which Math method from Day 10 finds the largest number?
+function Student (name, grade, scores) {
+    this.name=name;
+    this.grade=grade;
+    this.scores=scores;
+    this.getHighest = function() {
+   return Math.max(this.scores[0],this.scores[1],this.scores[2])
+}
+}
+
+
+
+
+// Core 3: Create an array named roster that holds THREE students made with new.
+let roster =[
+    new Student( "Eli", 12,[100,99,98]),
+    new Student("Kimora",11,[2,5,8] ),
+    new Student ("Elvin",10,[75,80,65]),
+];
+
+// Core 4: Log each student's name and highest score using its index,
+//   for example roster[0].name. Output should look like: Maya: 90
+console.log(roster[0].name, roster[0].getHighest())
+console.log(roster[1].name, roster[1].getHighest())
+console.log(roster[2].name, roster[2].getHighest())
+
+// Core 5: For roster[0]: change the second score (scores[1]) to a new high score.
+//   Add a new homeroom property using BRACKET notation.
+//   Log the new homeroom and the new highest score.
+roster[0].scores[1] = 150
+roster[0]["homeroom"]=250
+console.log(roster[0].name, roster[0].getHighest())
+console.log(roster[0].homeroom)
+</script>
+</body>
+</html>
