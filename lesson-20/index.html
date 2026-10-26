@@ -130,13 +130,48 @@
         //   - the highest and lowest students
         // Then call sortByAverage(roster); and printReport(roster);
         function printReport(list){
-            console.log(new Date().toLocaleString("en-US"))
-            for (let i = 0; i< list.length,i++){
-                let student= list[i];
-               
+            // 1. Header with today's date
+            console.log("Performance Report " + new Date().toLocaleDateString("en-US") );
+            
+          
+
+            // Variables to track highest and lowest students
+            let highestStudent = list[0];
+            let lowestStudent = list[0];
+
+
+
+
+            
+            // 2. Loop through and print numbered lines per student
+            for (let i = 0; i < list.length; i++){
+                let student = list[i];
+                let currentAvg = student.getAverage();
+
+                // Format the individual line
+                console.log((i + 1) + ". " + student.name + " - Average: " + currentAvg.toFixed(1));
+
+                // Track highest
+                if (currentAvg > highestStudent.getAverage()) {
+                    highestStudent = student;
+                }
+                // Track lowest
+                if (currentAvg < lowestStudent.getAverage()) {
+                    lowestStudent = student;
+                }
             }
+
+            // 3. Log the highest and lowest students
+            
+            console.log("Highest Student: " + highestStudent.name + " (" + highestStudent.getAverage().toFixed(1) + ")");
+            console.log("Lowest Student: " + lowestStudent.name + " (" + lowestStudent.getAverage().toFixed(1) + ")");
+            
         }
-   </script>
+
+        // Call the functions
+        sortByAverage(roster);
+        printReport(roster);
+    </script>
 </body>
 
 </html>
