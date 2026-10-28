@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Art Club</title>
+</head>
+<body>
+  <h1 id="pageTitle">Art Club 2024</h1>
+  <h2>Old News</h2>
+  <h2>Old Events</h2>
+  <p id="intro">Welcome!</p>
+  <ul id="supplies"></ul>
+  <p class="date">TBD</p>
+  <p class="date">TBD</p>
+  <p class="date">TBD</p>
+  <p id="footer"></p>
+
+  <script>
+    // Write your code here, one comment above each task
+document.getElementById("pageTitle").textContent ="Art Club 2026"
+heading = document. getElementsByTagName("h2")
+heading[0].textContent = "Club News"
+heading[1].textContent = "Upcoming Events"
+let dates = document.getElementsByClassName("date")
+for(let i = 0; i< dates.length;i++){
+    dates[i].textContent = "Wednesdays at 3:30"
+}
+  </script>
+</body>
+</html>
