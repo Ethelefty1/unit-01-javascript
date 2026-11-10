@@ -37,16 +37,47 @@ function checkQty(){
   if (qty.value.trim() === ""){
    showError("qtyError","Enter a quantity.")
    return false
-   } else if (isNaN(qty.value)===true){
+   } else if (isNaN(qty.value)){
     showError("qtyError","Quantity must be a number.")
     return false
    } else if (qty < 1 || qty > 10) {
    showError("qtyError","Order 1 to 10 pizzas.")
    return false
+  } else {
+    showError("qtyError", "")
+    return true 
   }
-
-
 }
+function onPromo(){
+  if (promo.value.trim() === ""){
+     showError("promoError","Enter a promo code.")
+     return false
+  }
+else if (promo.value.trim().toUpperCase() === "PIZZA5"){
+  showError("promoError", "")
+  return true
+} else{
+  showError("promoError","Code not found")
+  return false
+}
+}
+custName.addEventListener("blur",checkName)
+qty.addEventListener("blur",checkQty)
+promo.addEventListener("blur",onPromo)
+
+function placeOrder(){
+  let nameOk = checkName()
+  let qtyOk = checkQty()
+  let promoOk = onPromo()
+  if (nameOk && qtyOk && promoOk){
+    document.getElementById("orderStatus").textContent ="Order placed for " + custName.value + " ! " 
+
+  } else {
+    showError("orderStatus","Fix the red messages")
+  }
+} 
+document.getElementById("orderBtn").addEventListener("click",placeOrder)
+
   </script>
 </body>
 </html>
