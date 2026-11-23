@@ -8,8 +8,15 @@ function checkScreen(){
 
     }
 }
+
 function startApp(){
     checkScreen();
+    // Checkpoint 3
+    showCard(current)
+    document.getElementById("nextBtn").addEventListener("click",nextCard)
+    document.getElementById("card").addEventListener("mouseover",highlightCard)
+    document.getElementById("card").addEventListener("mouseout",unhighlightCard)
+document.addEventListener("keydown",checkKey)
 }
 
 //CheckPoint 2 
@@ -22,15 +29,13 @@ case "1.2" : return "Apply JavaScript best practices"
 
 case "1.3" : return "Evaluate the use of internal and external scripts"
 case "1.4" : return "Implement exception handling"
-case "1.5" : return "Complete and debug code that interacts with the Browser Object 
-Model (BOM)"
+case "1.5" : return "Complete and debug code that interacts with the Browser Object Model (BOM)"
 
 case "2.1" : return "Declare and use variables of primitive data types"
 case "2.2": return "Declare and use arrays"
 case "2.3": return "Complete and debug code that uses objects"
 case "2.4": return "Complete and debug code that uses built-in Math functions"
-case "2.5": return "Complete and debug functions that accept parameters and return 
-values"
+case "2.5": return "Complete and debug functions that accept parameters and return values"
 
 case "3.1" : return "Evaluate expressions that use logical and comparison operators"
 case "3.2": return "Complete and debug decision statements"
@@ -39,14 +44,11 @@ case "3.3": return "Complete and debug loops"
 case "4.1" : return "Identify and construct the Document Object Model (DOM) tree"
 case "4.2": return  "Identify and handle document, form, keyboard, and mouse events"
 case "4.3": return "Complete and debug code that outputs to an HTML document"
-case "4.4": return "Complete and debug code that locates, modifies, and adds HTML 
-elements and attributes to documents"
+case "4.4": return "Complete and debug code that locates, modifies, and adds HTML elements and attributes to documents"
 case "4.5": return "Create events using event handlers and listeners"
 
-case "5.1": return "Complete and debug code that retrieves form input and sets form 
-field values"
-case "5.2": return "Complete and debug code that performs input validation
-"
+case "5.1": return "Complete and debug code that retrieves form input and sets form field values"
+case "5.2": return "Complete and debug code that performs input validation"
 case "5.3": return "Describe the form submission process"
 
 
@@ -84,4 +86,42 @@ let deck = [
  new Card ("Math.round(-2.5)", "-2 -- rounding -2.5 gives you 2 ","2.4"),
 ]
 
- console.log(deck[0].getLabel())
+
+
+ let current = 0
+function showCard(index){
+  document.getElementById("cardQuestion").textContent = deck[index].question
+  document.getElementById("cardAnswer").textContent = deck[index].answer
+  document.getElementById("cardLabel").textContent = deck[index].getLabel()
+  document.getElementById("cardAnswer").style.display = "none"
+  document.getElementById("cardNumber").textContent = "Card " + (index + 1) + " of " + deck.length
+  
+}
+function flipCard(){
+ if(document.getElementById("cardAnswer").style.display === "none") {
+    document.getElementById("cardAnswer").style.display = "block"
+ }  else{
+    document.getElementById("cardAnswer").style.display = "none"
+ } 
+}
+function nextCard () {
+    current++
+    if (current % deck.length === 0) {
+        current = 0
+    }
+    showCard(current)
+}
+function highlightCard(){
+    let card =document.getElementById("card")
+        card.className = "card highlight"
+    
+}
+function unhighlightCard(){
+    let card = document.getElementById("card")
+    card.className ="card"
+}
+function checkKey(event){
+    if (event.key === "ArrowRight") {
+        nextCard()
+    }
+}
