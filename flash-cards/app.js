@@ -139,6 +139,7 @@ function getRandom(min, max) {
 }
 function shuffleCard() {
     current = getRandom(0, deck.length - 1)
+
 } 
 function updateScore() {
     if (document.getElementById("scoreMsg").textContent === "") {
@@ -163,7 +164,7 @@ function markGot() {
 
 function markMissed() {
     missed += 1
-    current++
+    current+
     updateScore()
 }
 
@@ -184,3 +185,35 @@ function showCountdown() {
         document.getElementById("countdown").textContent = "Exam day is here" + EXAM_DATE.toLocaleString("en-us") + ", You've got this! "
     }
 }
+//Checkpoint 5
+
+function renderList(){
+    document.getElementById("cardlist").innerHTML= ""
+
+    for (let i = 0; i < deck.length ; i++){
+        let li = document.createElement("li")
+        li.textContent = deck[i].question + " [" + deck[i].answer + "]"
+        document.getElementById("cardList").appendChild(li)
+    }
+    document.getElementById("cardList").textContent = deck.length
+}
+function searchDeck() {
+    let list = document.getElementById("searchBox").ariaValueMax.toLowerCase()
+    let lists = document.getElementsByTagName("li")
+    
+    for (let i = 0; i < list.length; i++){
+        if (list.trim()===""){
+            lists[i].classList =""
+            document.getElementById("searchMsg").textContent =""
+        }
+        else if ( lists[i].textContent.toLowerCase().includes(list.trim())){
+            lists[i].classList = "match"
+            document.getElementById("searchMsg").textContent = document.getElementsByClassName("match").length + " matches found for " +
+            '""' + list + '""'
+        } else {
+            lists[i].classList =""
+            document.getElementById("searchMsg").textContent=""
+        }
+    }
+}
+
